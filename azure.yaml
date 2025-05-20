@@ -1,0 +1,38 @@
+name: dating-agent
+services:
+  backend:
+    project: .
+    language: python
+    host: appservice
+    docker:
+      context: .
+    build:
+      command: pip install -r requirements.txt
+    start:
+      command: uvicorn runtime.dating_asgi:app --host 0.0.0.0 --port 8000
+    environment:
+      AGENT_LOG_FILE: /tmp/agent.log
+      PORT: 8000
+  frontend:
+    project: ./frontend
+    language: js
+    host: appservice
+    build:
+      command: pnpm install && pnpm build
+    start:
+      command: pnpm start
+    environment:
+      # Loaded from frontend/.env.local or prompted interactively
+  frontend-static:
+    project: ./frontend
+    language: js
+    host: staticwebapp
+    build:
+      command: pnpm install && pnpm build
+    output:
+      path: .next
+    environment:
+      # Loaded from frontend/.env.local or prompted interactively
+infra:
+  provider: bicep
+  path: infra/main.bicep 

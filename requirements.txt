@@ -1,0 +1,38 @@
+# Core dependencies
+python-dotenv
+pytz
+httpx
+requests
+wikipedia-api
+geopy
+brotli
+beautifulsoup4
+bingsearchpy
+googlesearch-python
+playwright
+playwright-stealth
+
+# LiveKit and LLM plugins
+livekit-agents
+livekit-plugins-google
+livekit-plugins-azure
+livekit-plugins-openai
+livekit-plugins-silero
+azure-cognitiveservices-speech
+
+# Additional utilities
+html5lib
+lxml
+
+# Redis
+aioredis
+
+# Uvicorn
+uvicorn
+
+# FastAPI
+fastapi
+
+# Pydantic
+pydantic
+
